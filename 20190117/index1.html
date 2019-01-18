@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS-1</title>
+    <script>
+        var degisken = 10;
+        degisken = "kamil";
+        degisken = 'Kamil';
+        degisken = "Degisken\nFıdıl";
+        degisken = 3.14;
+        degisken = degisken > 10;
+        degisken = ["elma", "armut"];
+        degisken.push(3.14, 2);
+        degisken[2] = 2.71;
+        degisken[15] = "kardeşşşim";
+        degisken[11] = null;
+        degisken[12] = undefined;
+        degisken[13] = NaN;
+
+        var kisi1 = {
+            id: 1,
+            ad: "kamil",
+            soyad: "fıdıl"
+        };
+
+        kisi1.telefon = "0123456789";
+        degisken.push(kisi1);
+
+        var kisi2 = new Object();
+        kisi2.ad = "vjfsg";
+        kisi2.soyad = "asdsd";
+        kisi2.id = 2;
+
+        var kare = {
+            x: 5,
+            alan: function () {
+                return this.x * this.x;
+            }
+        }
+
+        console.log(degisken);
+        console.log(kisi1);
+        console.log(kisi2);
+        console.log(kare);
+        console.log("karenin alanı: "+kare.alan());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - 3 Color Picker</title>
+    <style>
+        .kutu {
+                width: 250px;
+                height: 250px;
+                border: 1px solid #000;
+                font-size: 40px;
+                padding-top: 125px;
+                padding-left: 125px;
+                font-weight: 800;
+                
+            }
+    </style>
+    <script>
+        function degistir() {
+            var pickers = document.getElementsByClassName("picker");
+            var r, g, b;
+            for (var i = 0; i < pickers.length; i++) {
+                var element = pickers[i];
+                if (element.name == "r") {
+                    r = parseInt(element.value);
+                } else if (element.name == "g") {
+                    g = parseInt(element.value);
+                } else if (element.name == "b") {
+                    b = parseInt(element.value);
+                }
+            }
+            var box = document.getElementsByClassName("kutu")[0];
+            var hexColor = "#" + toHex(r) + toHex(g) + toHex(b);
+            box.style.backgroundColor = hexColor;
+            box.innerHTML = hexColor;
+            var textColor = "#" + toHex(255 - r) + toHex(255 - g) + toHex(255 - b);
+            box.style.color = textColor;
+        }
+        function toHex(param) {
+            var hexString = param.toString(16);
+            if (hexString.length == 1) {
+                hexString = "0" + hexString;
+            }
+            return hexString;
+        }
+
+        function renklendir(renk){
+            var box=document.getElementsByClassName("kutu")[0];
+        }
+    </script>
+</head>
+
+<body onload="degistir()">
+    <input type="range" class="picker" name="r" max="255" min="0" onmousemove="degistir()" /> R <br>
+    <input type="range" class="picker" name="g" max="255" min="0" onmousemove="degistir()" /> G <br>
+    <input type="range" class="picker" name="b" max="255" min="0" onmousemove="degistir()" /> B <br>
+    <input type="color" id="colorpicker" onchange="renklendir(this.value)"/>
+    <div class="kutu"></div>
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS-3</title>
+    <link rel="stylesheet" href="../20190116/bower_components/bootstrap/dist/css/bootstrap.css" />
+
+    <script>
+        function renklendir() {
+            var r = parseInt(document.getElementById("red").value);
+            var g = parseInt(document.getElementById("green").value);
+            var b = parseInt(document.getElementById("blue").value);
+
+            kutu.style.backgroundColor = rgb(r, g, b);
+            // document.getElementById("kutu").style.backgroundColor=rgb(r, g, b);
+            // document.getElementsByClassName("kutu").style.backgroundColor(r,g,b);
+            console.log(r);
+            
+        }
+    </script>
+</head>
+
+<body>
+    <input type="range" class="picker" max="255" min="0" id="red" value="255" onchange="renklendir()" />
+    <input type="range" class="picker" max="255" min="0" id="green" value="255" onchange="renklendir()" />
+    <input type="range" class="picker" max="255" min="0" id="blue" value="255" onchange="renklendir()" />
+
+    <div class="kutu" id="kutu"></div>
+    <style>
+        .kutu {
+            width: 250px;
+            height: 250px;
+            border: 1px solid #000;
+        }
+    </style>
+</body>
+
+</html> -->
